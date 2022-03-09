@@ -39,10 +39,25 @@ def TelaDeCadastro():
             janela.close()
             break
         elif event == 'Concluir':
-            if OpreacaoDeCadastro(values):
+            Nome = values[0]
+            Cpf = values[1]
+            Sexo = values[2]
+            Idade = values[3]
+            Senha = values[4]
+            ConfirmarSenha = values [5]
+
+            Dados = (Nome, Cpf, Sexo, Idade, Senha, ConfirmarSenha)
+
+            if OpreacaoDeCadastro(Dados):
+
+                #GravarNoBancoClientes((values[0],values[1],values[2],values[3],values[4]))
+
                 sg.popup("Conta Registrada com Sucesso!")
                 janela.close()
                 JanelaDeLogin()
+            else:
+                print('Erro111')
+                pass
 
             
 JanelaDeLogin()
